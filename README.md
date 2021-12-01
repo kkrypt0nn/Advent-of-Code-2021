@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-[Image](AoC.jpg)
+<img src="AoC.jpg" width="75%" height="75%">
 
 Like every year I try to participate (and not give up lol) to the yearly Advent of Code. Since I am currently learning Go I've decided this year to fully make it in Go, woohoo.
 
