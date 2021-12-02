@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+
 	"co.uk.krypt0n/aoc/helpers"
 )
 
@@ -12,7 +13,7 @@ func main() {
 }
 
 func part_one() int {
-	lines := helpers.OpenFile("input-test.txt")
+	lines := helpers.ReadFile("input-test.txt")
 	previous := 0
 	total := 0
 	for _, line := range lines {
@@ -26,12 +27,12 @@ func part_one() int {
 }
 
 func part_two() int {
-	lines := helpers.OpenFile("input-test.txt")
+	lines := helpers.ReadFile("input-test.txt")
 	previous := 0
 	total := 0
 	for line, _ := range lines {
 		var list []int
-		for _, linee := range lines[line:line+3] {
+		for _, linee := range lines[line : line+3] {
 			lineInt, _ := strconv.Atoi(linee)
 			if lineInt == 0 {
 				break

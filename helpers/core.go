@@ -1,12 +1,12 @@
 package helpers
 
 import (
-	"os"
-	"log"
 	"bufio"
+	"log"
+	"os"
 )
 
-func OpenFile(fileName string) []string {
+func ReadFile(fileName string) []string {
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)
