@@ -46,30 +46,11 @@ I will try to optimise it when (and if) I have time :)
 */
 func part_two() int {
 	lines := helpers.ReadFile("input-test.txt")
-	var list []string
+	list := lines
 	var newList []string
-	countZero := 0
-	countOne := 0
-	for _, line := range lines {
-		switch string(line[0]) {
-		case "0":
-			countZero++
-		case "1":
-			countOne++
-		}
-	}
-	for _, line := range lines {
-		if string(line[0]) == "1" && countOne > countZero {
-			list = append(list, line)
-		}
-		if string(line[0]) == "0" && countOne < countZero {
-			list = append(list, line)
-		}
-	}
 	for i := 0; i < len(lines[5]); i++ {
-		countOne = 0
-		countZero = 0
-		newList = []string{}
+		countOne := 0
+		countZero := 0
 		for _, item := range list {
 			switch string(item[i]) {
 			case "0":
@@ -91,34 +72,17 @@ func part_two() int {
 				}
 			}
 		}
-		list = newList
-	}
-	ox, _ := strconv.ParseInt(list[0], 2, 64)
-
-	list = []string{}
-	newList = []string{}
-	countZero = 0
-	countOne = 0
-	for _, line := range lines {
-		switch string(line[0]) {
-		case "0":
-			countZero++
-		case "1":
-			countOne++
+		if len(list) != 1 {
+			list = newList
 		}
-	}
-	for _, line := range lines {
-		if string(line[0]) == "1" && countOne < countZero {
-			list = append(list, line)
-		}
-		if string(line[0]) == "0" && countOne > countZero {
-			list = append(list, line)
-		}
-	}
-	for i := 1; i < len(lines[5])-1; i++ {
-		countOne = 0
-		countZero = 0
 		newList = []string{}
+	}
+	oxygen, _ := strconv.ParseInt(list[0], 2, 64)
+
+	list = lines
+	for i := 0; i < len(lines[5]); i++ {
+		countOne := 0
+		countZero := 0
 		for _, item := range list {
 			switch string(item[i]) {
 			case "0":
@@ -130,9 +94,11 @@ func part_two() int {
 		for _, item := range list {
 			if string(item[i]) == "1" && countOne < countZero {
 				newList = append(newList, item)
-			} else if string(item[i]) == "0" && countOne > countZero {
+			}
+			if string(item[i]) == "0" && countOne > countZero {
 				newList = append(newList, item)
-			} else if countOne == countZero {
+			}
+			if countOne == countZero {
 				if string(item[i]) == "0" {
 					newList = append(newList, item)
 				}
@@ -141,8 +107,9 @@ func part_two() int {
 		if len(list) != 1 {
 			list = newList
 		}
+		newList = []string{}
 	}
-	co, _ := strconv.ParseInt(list[0], 2, 64)
+	carbon, _ := strconv.ParseInt(list[0], 2, 64)
 
-	return int(ox) * int(co)
+	return int(oxygen) * int(carbon)
 }
