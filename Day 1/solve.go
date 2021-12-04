@@ -8,11 +8,11 @@ import (
 )
 
 func main() {
-	fmt.Println("Part one:", part_one())
-	fmt.Println("Part two:", part_two())
+	fmt.Println("Part one:", partOne())
+	fmt.Println("Part two:", partTwo())
 }
 
-func part_one() int {
+func partOne() int {
 	lines := helpers.ReadFile("input-test.txt")
 	previous := 0
 	total := 0
@@ -26,11 +26,11 @@ func part_one() int {
 	return total
 }
 
-func part_two() int {
+func partTwo() int {
 	lines := helpers.ReadFile("input-test.txt")
 	previous := 0
 	total := 0
-	for line, _ := range lines {
+	for line := range lines {
 		var list []int
 		for _, linee := range lines[line : line+3] {
 			lineInt, _ := strconv.Atoi(linee)

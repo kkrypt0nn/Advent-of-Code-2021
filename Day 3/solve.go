@@ -8,11 +8,11 @@ import (
 )
 
 func main() {
-	fmt.Println("Part one:", part_one())
-	fmt.Println("Part two:", part_two())
+	fmt.Println("Part one:", partOne())
+	fmt.Println("Part two:", partTwo())
 }
 
-func part_one() int {
+func partOne() int {
 	lines := helpers.ReadFile("input-test.txt")
 	gamma := ""
 	epsilon := ""
@@ -40,11 +40,7 @@ func part_one() int {
 	return int(gammaInt) * int(epsilonInt)
 }
 
-/*
-This code is a disaster and I know it.
-I will try to optimise it when (and if) I have time :)
-*/
-func part_two() int {
+func partTwo() int {
 	lines := helpers.ReadFile("input-test.txt")
 	list := lines
 	var newList []string

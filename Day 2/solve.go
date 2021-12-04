@@ -9,11 +9,11 @@ import (
 )
 
 func main() {
-	fmt.Println("Part one:", part_one())
-	fmt.Println("Part two:", part_two())
+	fmt.Println("Part one:", partOne())
+	fmt.Println("Part two:", partTwo())
 }
 
-func part_one() int {
+func partOne() int {
 	lines := helpers.ReadFile("input-test.txt")
 	posX := 0
 	posY := 0
@@ -32,7 +32,7 @@ func part_one() int {
 	return posX * posY
 }
 
-func part_two() int {
+func partTwo() int {
 	lines := helpers.ReadFile("input-test.txt")
 	posX := 0
 	posY := 0
