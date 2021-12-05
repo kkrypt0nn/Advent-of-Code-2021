@@ -14,8 +14,7 @@ func main() {
 
 func partOne() int {
 	lines := helpers.ReadFile("input-test.txt")
-	previous := 0
-	total := 0
+	previous, total := 0, 0
 	for _, line := range lines {
 		lineInt, _ := strconv.Atoi(line)
 		if lineInt > previous && previous != 0 {
@@ -28,8 +27,7 @@ func partOne() int {
 
 func partTwo() int {
 	lines := helpers.ReadFile("input-test.txt")
-	previous := 0
-	total := 0
+	previous, total := 0, 0
 	for line := range lines {
 		var list []int
 		for _, linee := range lines[line : line+3] {

@@ -14,11 +14,9 @@ func main() {
 
 func partOne() int {
 	lines := helpers.ReadFile("input-test.txt")
-	gamma := ""
-	epsilon := ""
+	gamma, epsilon := "", ""
 	for i := 0; i < len(lines[5]); i++ {
-		countZero := 0
-		countOne := 0
+		countZero, countOne := 0, 0
 		for _, line := range lines {
 			switch string(line[i]) {
 			case "0":
@@ -45,8 +43,7 @@ func partTwo() int {
 	list := lines
 	var newList []string
 	for i := 0; i < len(lines[5]); i++ {
-		countOne := 0
-		countZero := 0
+		countOne, countZero := 0, 0
 		for _, item := range list {
 			switch string(item[i]) {
 			case "0":
@@ -77,8 +74,7 @@ func partTwo() int {
 
 	list = lines
 	for i := 0; i < len(lines[5]); i++ {
-		countOne := 0
-		countZero := 0
+		countOne, countZero := 0, 0
 		for _, item := range list {
 			switch string(item[i]) {
 			case "0":

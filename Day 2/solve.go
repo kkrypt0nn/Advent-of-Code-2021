@@ -15,8 +15,7 @@ func main() {
 
 func partOne() int {
 	lines := helpers.ReadFile("input-test.txt")
-	posX := 0
-	posY := 0
+	posX, posY := 0, 0
 	for _, line := range lines {
 		split := strings.Split(line, " ")
 		lineInt, _ := strconv.Atoi(split[1])
@@ -34,9 +33,7 @@ func partOne() int {
 
 func partTwo() int {
 	lines := helpers.ReadFile("input-test.txt")
-	posX := 0
-	posY := 0
-	aim := 0
+	posX, posY, aim := 0, 0, 0
 	for _, line := range lines {
 		split := strings.Split(line, " ")
 		lineInt, _ := strconv.Atoi(split[1])
