@@ -28,3 +28,13 @@ func Sum(list []int) int {
 	}
 	return sum
 }
+
+func Max(list []int) int {
+	max := 0
+	for _, x := range list {
+		if x > max {
+			max = x
+		}
+	}
+	return max
+}
