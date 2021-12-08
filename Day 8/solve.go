@@ -44,7 +44,6 @@ func partTwo() int {
 	lines := helpers.ReadFile("input-test.txt")
 	total := 0
 	for _, line := range lines {
-		numbers := []string{"abcefg", "cf", "acdeg", "acdfg", "bcdf", "abdfg", "abdefg", "acf", "abcdefg", "abcdfg"}
 		known := map[int]string{
 			1: "",
 			4: "",
@@ -67,16 +66,12 @@ func partTwo() int {
 			switch len(value) {
 			case 2:
 				known[1] = string(value)
-				numbers[1] = string(value)
 			case 4:
 				known[4] = string(value)
-				numbers[4] = string(value)
 			case 3:
 				known[7] = string(value)
-				numbers[7] = string(value)
 			case 7:
 				known[8] = string(value)
-				numbers[8] = string(value)
 			default:
 				unknown = append(unknown, string(value))
 			}
