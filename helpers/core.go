@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"log"
 	"os"
+	"strings"
 )
 
 func ReadFile(fileName string) []string {
@@ -29,6 +30,14 @@ func Sum(list []int) int {
 	return sum
 }
 
+func MapSum(theMap map[int]int) int {
+	sum := 0
+	for _, x := range theMap {
+		sum += x
+	}
+	return sum
+}
+
 func Max(list []int) int {
 	max := 0
 	for _, x := range list {
@@ -37,4 +46,25 @@ func Max(list []int) int {
 		}
 	}
 	return max
+}
+
+func Contains(str string, substr string) bool {
+	for _, i := range substr {
+		if !strings.Contains(str, string(i)) {
+			return false
+		}
+	}
+	return true
+}
+
+func ContainsExactly(str string, substr string) bool {
+	if len(str) != len(substr) {
+		return false
+	}
+	for _, i := range substr {
+		if !strings.Contains(str, string(i)) {
+			return false
+		}
+	}
+	return true
 }
